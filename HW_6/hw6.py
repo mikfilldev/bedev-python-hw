@@ -7,7 +7,7 @@ user = {"username" : "Kolia",
 
 
 message = {"user": user,
-		   "word": "the"
+		   "word": "0the"
 		   }
 
 
@@ -35,34 +35,18 @@ sentences = [
 
 
 def is_valid_username(name: str) -> bool:
-	""""Checking for correct username input.
-	
-	Return false if name have less then 2 letters.
-	""" 
 
-	return isinstance(name, str) and len(name) > 1
+	return isinstance(name, str) and len(name) > 1 
 
 
 def is_valid_userlevel(level: int) -> bool:
-	"""Checking for correct user level input.
-	
-	Return false if level not include number between 0-2.
-	"""
 	
 	return isinstance(level, int) and 0 <= level <= 2
 
 
 def is_valid_userword(word: str) -> bool:
-	"""Checking for the correct user's input word.
 	
-	Return false if word have numbers in substring.
-	"""
-	
-	if isinstance(word, str):
-		if word.isalpha():
-			return True
-		return False
-	return False
+	return isinstance(word, str) and word.isalpha()
 
 
 def get_list_dict_with_matched_userlevel(list_dicts: dict, level: int) -> list:
@@ -117,4 +101,5 @@ if is_valid_username(user.get("username")):
 		print("Userlevel invalid")
 else: 
 	print("Username invalid") 
+
 
